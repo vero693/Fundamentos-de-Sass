@@ -1,0 +1,499 @@
+$primary-clr : #ffefe7;
+$secondary-clr: #ffdac6;
+$tertiary-clr: #babd8d;
+$background: #fa9500;
+$primary-text-clr: #7c6a0a;
+$secondary-text-clr: #E86424;
+$font-stack: "IBM Plex sans", sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-stack;
+    background: $primary-clr;
+} 
+
+p {
+    max-width: 65ch;
+    text-wrap: pretty;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+} 
+
+.navbar {
+    padding: 1.5625rem 1.375rem; 
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+} 
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    width: inherit;
+    justify-content: space-between;
+}
+            
+.hamburguer {
+    border: none;
+    background: none;
+}
+
+.navbar-title {
+    font-size: clamp(1.25rem, 2.87vw, 1.875rem);
+    color: $primary-text-clr;
+}
+            
+.navbar-actions {
+    display: none;
+}    
+    
+.main {
+    padding: 1.6875rem;
+}
+        
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.9375rem, 2vw, 3.125rem);
+    margin-bottom: 1.875rem;
+}
+            
+.main-section-image {
+    border-radius: 7.2px;
+    overflow: hidden;
+
+    img {
+        width: 90vw;
+    }
+}
+
+.main-section-info {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.25rem, 2vw, 1.875rem);
+}
+                
+.main-section-title {
+    font-size: clamp(1.75rem, 2vw, 3.75rem);
+    color: $primary-text-clr;
+    font-weight: 600;
+}
+
+.main-section-description {
+    font-size: clamp(0.75rem, 2.4vw, 1.375rem);
+    color: $primary-text-clr;
+    max-width: 37rem;
+}
+
+.main-section-btn {
+    width: 9.375rem;
+    height: 2.625rem;
+    align-self: center;
+    border: none;
+    color: #fff;
+    font-size: clamp(0.827rem, 2vw, 1.4375rem);
+    font-weight: 700;
+    background: #fa9500;
+    border-radius: 20.13px;
+}
+
+
+ .section-title {
+    font-weight: 500;
+    font-size: clamp(1.375rem, 6vw, 3.125rem);
+    color: $primary-text-clr;
+    margin-bottom: 1.875rem;
+    margin-top: 2.5rem;
+
+    span {
+        display: block;
+    }
+}
+
+.cards {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    gap: clamp(1.25rem, 12.327vw, 6.25rem);
+    margin-inline: -1.6875rem;
+    padding-inline: 1.6875rem;
+
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #ffefe7;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #fa9500;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #e68600;
+    }
+}      
+
+.card {
+    padding: 0.9375em;
+    border-radius: 4.4px;
+    display: grid;
+    place-items: center;
+    gap: 0.5625rem;  
+}
+
+.card-health {
+    @extend .card;
+    background: $secondary-clr;
+}
+                    
+.card-icon {
+    width: 20px;
+    height: 20px;
+    justify-self: end;
+}
+
+.card-image {
+    width: 132px;
+    height: 165px;
+    border-radius: 3.58px;
+    overflow: hidden;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem
+}
+
+.health-text {
+    @extend .card-text;
+    color: $primary-text-clr;
+}
+
+.decoration-text {
+    @extend .card-text;
+    color: #fff;
+}
+
+.card-title {
+    font-size: clamp(0.8125rem, 2vw, 1.5625rem);
+    font-weight: 500; 
+}
+
+.card-description {
+    font-size: clamp(0.515rem, 2vw, 0.9375rem);
+}
+
+.card-decoration {
+    @extend .card;
+    background: $tertiary-clr;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+
+    p {
+        font-size: clamp(0.844rem, 3vw, 1.875rem);
+        color: $secondary-text-clr;
+        font-weight: 500;
+    }
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4.375rem;
+}
+
+.about-icon {
+    width: 73.85px;
+    height: 73.85px;
+}
+
+.compromise {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9325rem;
+    align-items: center;
+    text-align: center;
+}
+
+.innovation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9325rem;
+    align-items: center;
+    text-align: center;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+}
+
+.image {
+    aspect-ratio: 1 / 1;
+    border-radius: 11.96px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.map {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.map-image {
+    aspect-ratio: 1 / 1;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+}
+
+.map-text {
+    color: $secondary-text-clr;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9375rem;
+
+    span {
+        display: block;
+    }
+}
+
+.map-text p:first-of-type {
+    font-size: clamp(1.25rem, 3vw, 2.1875rem);
+    line-height: 1.1;
+}
+
+.map-text p:last-of-type {
+    font-size: clamp(0.9375rem, 3vw, 1.5625rem);
+}
+
+.footer {
+    background: $background;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.6875rem;
+}
+
+.footer-title {
+    @extend .navbar-title;
+    color: #fff;
+    font-weight: 500;
+}
+
+.footer-links {
+    font-size: clamp(0.875rem, 3vw, 1.25rem);
+    color: #fff;
+
+    p {
+        line-height: 2;
+    }
+}
+
+.nav-footer {
+    display: flex;
+    gap: 35px;
+
+    a img {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        padding: 2.0625rem 5.3125rem;
+    }
+                    
+    .hamburguer {
+        display: none;
+    }
+
+    .navbar-actions {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    .main {
+        padding: 7.1875rem 4.0625rem;
+    }
+
+    .main-section-title {
+        margin-top: 1.25rem; 
+    }
+
+    .section-title {
+        margin-bottom: 3.125rem;
+        margin-top: 3.75rem;
+                   
+        span {
+            display: inline;
+        }
+    }
+
+    .main-section-btn {
+        width: 11.25rem;
+        height: 3.125rem;
+    }
+
+    .card {
+        padding: 1.25rem;
+    }
+                        
+    .card-icon {
+        width: 31px;
+        height: 31px;
+    }
+    
+    .card-image {
+        width: 15.0625rem;
+        height: 18.6875rem;
+    }     
+
+    .map p:first-child span {
+        display: inline;
+    }
+
+    .nav-footer {
+       justify-content: center;
+
+        a img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .main-section {
+        flex-direction: row-reverse;
+        align-items: flex-start;
+    }       
+                
+    .main-section-image {
+        width: 50vw;
+        border-radius: 19px;
+    }
+
+    .main-section-btn {
+        width: 261px;
+        height: 73px;
+        border-radius: 35px;
+        align-self: flex-start;
+        margin-top: 2.5rem;
+    }
+                
+    .section-title {
+        margin-bottom: 3.125rem;
+        margin-top: 3.75rem;
+                   
+        span {
+            display: inline;
+        }
+    }
+
+    .cards {
+        grid-auto-flow: row;
+        grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+       
+        overflow-x: hidden;   
+    }
+                    
+    .card {
+        border-radius: 8px;
+        gap: 0.9375rem;
+    }
+                        
+    .card-icon {
+        width: 31px;
+        height: 31px;
+    }
+    
+    .card-image {
+        width: 241px;
+        height: 299px;
+    }  
+    
+    .about-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .about-icon {
+        width: 168px;
+        height: 168px;
+    }
+
+    .compromise,
+    .innovation {
+        flex-direction: row;
+    }
+
+    .images {
+       flex-direction: row;
+    }
+
+    .image {
+        border-radius: 16px;
+        overflow: hidden;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 55%;
+        }
+    }
+    
+    .map-text span {
+        display: inline;
+    }
+
+    .footer {
+        padding: 1.875rem 4.0625rem;
+    }
+
+    .nav-footer a img {
+        width: 46px;
+        height: 46px;
+    }
+}
