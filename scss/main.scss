@@ -130,7 +130,7 @@ img {
     display: grid;
     grid-auto-flow: column;
     overflow-x: auto;
-    gap: clamp(1.25rem, 12.327vw, 6.25rem);
+    column-gap: clamp(1.25rem, 12.327vw, 6.25rem);
     margin-inline: -1.6875rem;
     padding-inline: 1.6875rem;
 
@@ -439,7 +439,7 @@ img {
     .cards {
         grid-auto-flow: row;
         grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
-       
+        row-gap: 75px;
         overflow-x: hidden;   
     }
                     
