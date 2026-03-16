@@ -141,6 +141,8 @@ img {
 .card, .card-decoration, .card-health {
   padding: 0.9375em;
   border-radius: 4.4px;
+  min-width: 11.125rem;
+  max-width: 20.25rem;
   display: grid;
   place-items: center;
   gap: 0.5625rem;
@@ -347,6 +349,10 @@ img {
   .main-section-btn {
     width: 11.25rem;
     height: 3.125rem;
+  }
+  .cards {
+    grid-auto-flow: column;
+    grid-auto-columns: 18.75rem;
   }
   .card, .card-health, .card-decoration {
     padding: 1.25rem;
