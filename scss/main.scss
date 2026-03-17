@@ -4,7 +4,51 @@ $tertiary-clr: #babd8d;
 $background: #fa9500;
 $primary-text-clr: #7c6a0a;
 $secondary-text-clr: #E86424;
-$font-stack: "IBM Plex sans", sans-serif;
+$font-stack: "IBM Plex Sans", sans-serif;
+
+/* ibm-plex-sans-regular - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/ibm-plex-sans-v23-latin-regular.woff2') format('woff2');
+} 
+
+/* ibm-plex-sans-500 - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/ibm-plex-sans-v23-latin-500.woff2') format('woff2'); 
+}
+
+/* ibm-plex-sans-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/ibm-plex-sans-v23-latin-600.woff2') format('woff2');
+}
+
+/* ibm-plex-sans-700 - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/ibm-plex-sans-v23-latin-700.woff2') format('woff2'); 
+}
+
+
+@mixin flex($justify: start, $align: null, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
 
 * {
     margin: 0;
@@ -13,9 +57,15 @@ $font-stack: "IBM Plex sans", sans-serif;
 }
 
 body {
-    font-family: $font-stack;
+    font-family: $font-stack, "Roboto", "Segoe UI", system-ui, sans-serif;;
     background: $primary-clr;
 } 
+
+h1,
+h2,
+h3 {
+    line-height: 1.1;
+}
 
 p {
     max-width: 65ch;
@@ -28,33 +78,34 @@ img {
 }
 
 .header {
+    @include flex($align: center);
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
 } 
 
 .navbar {
+    @include flex($justify: space-between);
     padding: 1.5625rem 1.375rem; 
-    display: flex;
     width: inherit;
-    justify-content: space-between;
 } 
 
 .navbar-menu {
-    display: flex;
-    align-items: center;
+    @include flex($align: center, $justify: space-between);
     width: inherit;
-    justify-content: space-between;
 }
             
 .hamburguer {
     border: none;
     background: none;
+    
+    img {
+        width: 2rem;
+        height: 2rem;
+    }
 }
 
 .navbar-title {
-    font-size: clamp(1.25rem, 2.87vw, 1.875rem);
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
     color: $primary-text-clr;
 }
             
@@ -67,9 +118,7 @@ img {
 }
         
 .main-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex($align: center, $direction: column);
     gap: clamp(0.9375rem, 2vw, 3.125rem);
     margin-bottom: 1.875rem;
 }
@@ -80,12 +129,12 @@ img {
 
     img {
         width: 90vw;
+        height: auto;
     }
 }
 
 .main-section-info {
-    display: flex;
-    flex-direction: column;
+    @include flex($direction: column);
     gap: clamp(1.25rem, 2vw, 1.875rem);
 }
                 
@@ -187,8 +236,7 @@ img {
 }
 
 .card-text {
-    display: flex;
-    flex-direction: column;
+    @include flex($direction: column);
     gap: 0.125rem
 }
 
@@ -217,8 +265,7 @@ img {
 }
 
 .about {
-    display: flex;
-    flex-direction: column;
+    @include flex($direction: column);
     gap: 1.875rem;
 
     p {
@@ -229,8 +276,7 @@ img {
 }
 
 .about-content {
-    display: flex;
-    flex-direction: column;
+    @include flex($direction: column);
     gap: 4.375rem;
 }
 
@@ -240,29 +286,25 @@ img {
 }
 
 .compromise {
-    display: flex;
-    flex-direction: column;
+    @include flex($align: center, $direction: column);
     gap: 0.9325rem;
-    align-items: center;
     text-align: center;
 }
 
 .innovation {
-    display: flex;
-    flex-direction: column;
+    @include flex($align: center, $direction: column);
     gap: 0.9325rem;
-    align-items: center;
     text-align: center;
 }
 
 .images {
-    display: flex;
-    flex-direction: column;
-    gap: 55px;
+    @include flex($align: center, $direction: column);
+    gap: 3.4375rem;
 }
 
 .image {
-    aspect-ratio: 1 / 1;
+    width: 18.5rem;
+    aspect-ratio: 296 / 297;
     border-radius: 11.96px;
     overflow: hidden;
 
@@ -274,8 +316,7 @@ img {
 }
 
 .map {
-    display: flex;
-    flex-direction: column;
+    @include flex($direction: column);
     gap: 2.5rem;
 }
 
@@ -292,9 +333,8 @@ img {
 }
 
 .map-text {
+    @include flex($direction: column);
     color: $secondary-text-clr;
-    display: flex;
-    flex-direction: column;
     gap: 0.9375rem;
 
     span {
@@ -312,12 +352,11 @@ img {
 }
 
 .footer {
+    @include flex($direction: column);
     background: $background;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
     padding: 1.6875rem;
+    gap: 1.25rem;
 }
 
 .footer-title {
@@ -337,8 +376,8 @@ img {
 
 .nav-footer {
     display: flex;
-    gap: 35px;
-
+    gap: 2.1875rem;
+    
     a img {
         width: 26px;
         height: 26px;
@@ -357,6 +396,12 @@ img {
     .navbar-actions {
         display: flex;
         gap: 2.5rem;
+
+        a img {
+            min-width: 3.1875rem;
+            height: 3.1875rem;
+        }
+    
     }
 
     .main {
@@ -405,20 +450,18 @@ img {
     }
 
     .nav-footer {
-       justify-content: center;
+        @include flex($justify: center);
 
         a img {
-            width: 30px;
-            height: 30px;
+            width: 1.875rem;
+            height: 1.875rem;
         }
     }
-
 }
 
 @media (min-width: 1024px) {
     .main-section {
-        flex-direction: row-reverse;
-        align-items: flex-start;
+        @include flex($align: flex-start, $direction: row-reverse);
     }       
                 
     .main-section-image {
@@ -427,8 +470,8 @@ img {
     }
 
     .main-section-btn {
-        width: 261px;
-        height: 73px;
+        width: 16.3125rem;
+        height: 4.5625rem;
         border-radius: 35px;
         align-self: flex-start;
         margin-top: 2.5rem;
@@ -461,14 +504,12 @@ img {
     }
     
     .card-image {
-        width: 241px;
-        height: 299px;
+        width: 15.0625rem;
+        height: 18.6875rem;
     }  
     
     .about-content {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        @include flex($justify: space-between, $direction: row);
     }
 
     .about-icon {
@@ -477,15 +518,14 @@ img {
     }
 
     .compromise,
-    .innovation {
-        flex-direction: row;
-    }
-
+    .innovation,
     .images {
-       flex-direction: row;
+        @include flex($direction: row);
     }
 
     .image {
+        width: 24.75rem;
+        aspect-ratio: 396 / 398;
         border-radius: 16px;
         overflow: hidden;
         
