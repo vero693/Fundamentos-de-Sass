@@ -37,7 +37,7 @@
 }
 
 body {
-  font-family: "IBM Plex Sans", sans-serif, "Roboto", "Segoe UI", system-ui, sans-serif;
+  font-family: "IBM Plex Sans", system-ui, "Roboto", "Segoe UI", system-ui, sans-serif;
   background: #ffefe7;
 }
 
@@ -107,7 +107,7 @@ img {
 .main-section {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   gap: clamp(0.9375rem, 2vw, 3.125rem);
   margin-bottom: 1.875rem;
@@ -126,7 +126,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  gap: clamp(1.25rem, 2vw, 1.875rem);
+  gap: clamp(1.25rem, 3.91vw, 2.8135rem);
 }
 
 .main-section-title {
@@ -136,7 +136,7 @@ img {
 }
 
 .main-section-description {
-  font-size: clamp(0.75rem, 2.4vw, 1.375rem);
+  font-size: clamp(0.75rem, 2.44vw, 1.5625rem);
   color: #7c6a0a;
   max-width: 37rem;
 }
@@ -225,6 +225,7 @@ img {
   flex-direction: column;
   justify-content: start;
   gap: 0.125rem;
+  transform: translateX(0.625rem);
 }
 
 .health-text {
@@ -309,6 +310,10 @@ img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.image img:hover {
+  transform: scale(1.1);
 }
 
 .map {
@@ -398,7 +403,7 @@ img {
     height: 3.1875rem;
   }
   .main {
-    padding: 7.1875rem 4.0625rem;
+    padding: 5.3125rem 4.0625rem;
   }
   .main-section-title {
     margin-top: 1.25rem;
@@ -413,6 +418,10 @@ img {
   .main-section-btn {
     width: 11.25rem;
     height: 3.125rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  .main-section-btn:hover {
+    transform: scale(1.1);
   }
   .cards {
     grid-auto-flow: column;
@@ -446,11 +455,11 @@ img {
   .main-section {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: start;
+    justify-content: space-between;
     align-items: flex-start;
   }
   .main-section-image {
-    width: 50vw;
+    width: 35vw;
     border-radius: 19px;
   }
   .main-section-btn {
@@ -458,7 +467,7 @@ img {
     height: 4.5625rem;
     border-radius: 35px;
     align-self: flex-start;
-    margin-top: 2.5rem;
+    margin-top: 1.875rem;
   }
   .section-title {
     margin-bottom: 3.125rem;
@@ -484,6 +493,9 @@ img {
   .card-image {
     width: 15.0625rem;
     height: 18.6875rem;
+  }
+  .card-text, .health-text, .decoration-text {
+    transform: translateX(0.75rem);
   }
   .about-content {
     display: flex;
